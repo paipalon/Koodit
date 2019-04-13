@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+ <meta charset='utf-8'>
+ <TITLE> HENKILÖTIETOJA </TITLE>
+
+ <script>
+function tarkista(){
+ var i;
+ var valittu;
+ var ok = true;
+ //alert("Tarkistetaan syöte");
+  if (document.lomake.nimi.value.trim().length < 1){ 
+	alert("Syötä nimi");
+	ok = false;
+	}
+  else if (document.lomake.pituus.value.trim().length < 1){  
+	alert("Syötä pituus");
+	ok = false;
+	}
+  else{
+	//alert("Tarkistetaan kansalaisuuden valitseminen");	
+	valittu = false;
+	for (i=0;i<5;i++){
+		if (document.lomake.kansalaisuus[i].checked)
+		valittu = true;
+	}
+	//alert("Tarkistettiin kansalaisuuden valitseminen");
+	if (! valittu){
+		alert("Valitse kansalaisuus");
+		ok = false;
+	}
+    //return(ok);
+    if (ok)
+	  alert("Tiedot oikein");
+  }
+}
+ </script>
+
+</HEAD>
+
+<BODY>
+
+<br>
+<FORM name="lomake">
+ <b>Nimi</b> <input type="text" name="nimi"><br>
+ <br>
+ <b>Pituus</b> <input type="text" name="pituus"><br>
+ <br>
+ <b>Kansalaisuus</b> <br>
+ <input type="radio" name="kansalaisuus" value="suomi">Suomi<br>
+ <input type="radio" name="kansalaisuus" value="ruotsi">Ruotsi<br>
+ <input type="radio" name="kansalaisuus" value="norja">Norja<br>
+ <input type="radio" name="kansalaisuus" value="islanti">Islanti<br>
+ <input type="radio" name="kansalaisuus" value="tanska">Tanska<br>
+ <br>
+ <button onclick="tarkista()">Tarkista</button><br>
+</FORM>
+
+</BODY>
+
+</HTML>

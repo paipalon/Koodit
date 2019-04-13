@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+  <TITLE>KORKOKEHITYS</TITLE>
+  <meta charset='utf-8'>
+  <script>
+function kehitys(){
+  var i;
+  var prosentti= 0;
+  var lisays= 0;
+  var tuloste = "";
+  var t = document.lomake.talletus.value;
+  var v = document.lomake.vuodet.value;
+  var k = document.lomake.korko.value;
+  t = parseInt(t);
+  v = parseInt(v);
+  k = parseInt(k);
+  var ylaraja = (v+1);
+  //document.lomake.tekstikentta.value = "Muutettiin luvuksi";
+  //tuloste += ("Pääoma "+t+", korko "+k+" prosenttia "+<br/>);
+  tuloste += ("Pääoma "+t+", korko "+k+" prosenttia, ");
+  for (i=1;i<ylaraja;i++){
+   prosentti = (t/100);
+   lisays = (k*prosentti);
+   t += lisays;
+   //tuloste += (i+". vuosi "+<br/>);
+   tuloste += (i+". vuosi, pääoma "+t);
+  }
+  document.lomake.tekstikentta.value = tuloste;
+  //document.lomake.tekstikentta.value = "Lasketaan";
+  //document.lomake.tekstikentta.value = ylaraja;
+  alert ("Lasketaan");
+}
+  </script>
+</HEAD>
+<BODY>
+<FORM name="lomake">
+  Talletuspääoma <input type="text" name="talletus"> <br><br>
+  Vuodet <input type="text" name="vuodet"> <br><br> 
+  Korkoprosentti <input type="text" name="korko"> <br><br>
+  <button onclick="kehitys()">Korkokehitys</button><br><br>
+  <textarea name="tekstikentta" rows="5" cols="40"></textarea>
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,20 @@
+<html>
+<head>
+ <script>
+function kopioi() {
+ var email;
+ email = document.lomake1.EMAIL1.value;
+ //alert("Sijoitettiin muuttujaan email arvo "+email);
+ document.lomake1.EMAIL2.value=email;
+ alert(document.lomake1.EMAIL2.value);
+}
+ </script>
+</head>
+<body>
+ <b>Kopiointi</b><br/>
+ <form name="lomake1">
+ 1. email: <input type="text" name="EMAIL1"> <button onClick="kopioi()">Kopioi</button><br/>
+ 2. email2: <input type="text" name="EMAIL2">
+ </form>
+</body>
+</html>

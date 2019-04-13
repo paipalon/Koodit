@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+ <meta charset='utf-8'>
+ <TITLE> VALUUTTAMUUNNIN </TITLE/>
+ <script>
+function USD(){
+	var euro = document.lomake.eurot.value;
+	var dollari = (euro*1.2583);
+	alert(euro+" euroa on "+dollari+" dollaria");
+}
+function SEK(){
+    var euro = document.lomake.eurot.value;
+	var kruunu = (euro*9.11);
+	alert(euro+" euroa on "+kruunu+" kruunua");             
+}
+function GBP(){
+    var euro = document.lomake.eurot.value;
+	var punta = (euro*0.7773);
+	alert(euro+" euroa on "+punta+" puntaa");               
+}
+ </script>
+
+</HEAD>
+<BODY>
+ <FORM name="lomake">
+   Eurot <input type="text" name="eurot">  <button onclick="USD()">USD</button> <button onclick="SEK()">SEK</button> <button onclick="GBP()">GBP</button>
+ </FORM>
+</BODY>
+</HTML>
